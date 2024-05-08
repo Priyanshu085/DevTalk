@@ -6,8 +6,7 @@ import { Button } from './ui/button'
 
 const MeetingSetup = ({ setIsSetupComplete }: {setIsSetupComplete: (value: boolean) => void}) => {
 
-  const [isMicCamToggled, setIsMicCamToggled] = useState(false)
-  // const [isSetupComplete, setIsSetupComplete] = useState(false)
+  const [isMicCamToggled, setIsMicCamToggled] = useState(false);
   const call = useCall();
 
   if(!call) {
