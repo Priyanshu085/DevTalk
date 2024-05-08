@@ -1,20 +1,32 @@
 import Link from 'next/link'
 import React from 'react'
-import { Button } from './ui/button'
+import Image from 'next/image'
+import { SignedIn, UserButton } from '@clerk/nextjs'
+import MobileNav from './MobileNav'
 
 const Navbar = () => {
   return (
-    <div className='flex'>
-      {/* <div className='text-white text-4xl m-2'>
-        DEVTALKS
-      </div> */}
-      {/* <div className="items-end float-end text-right object-right text-white text-xl p-4'>
-        <Button>
-          <Link href='/login'>Login</Link>
-        </Button>
-      </div> */}
+    <nav className="flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10">
+      <Link href="/" className="flex items-center gap-1">
+        {/* <Image
+          src="/icons/logo.svg"
+          width={32}
+          height={32}
+          alt="yoom logo"
+          className="max-sm:size-10"
+        /> */}
+        <p className="text-[26px] font-extrabold text-white max-sm:hidden">
+          DevTalk
+        </p>
+      </Link>
+      <div className="flex-between gap-5">
+        <SignedIn>
+          <UserButton afterSignOutUrl="/sign-in" />
+        </SignedIn>
 
-    </div>
+        <MobileNav />
+      </div>
+    </nav>
   )
 }
 
