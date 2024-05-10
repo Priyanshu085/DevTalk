@@ -70,11 +70,7 @@ const CallList = ({type}:{ type: 'ended' | 'upcoming' | 'recordings' }) => {
           <MeetingCard
             key={(meeting as Call).id}
             icon={
-              type === 'ended'
-                ? '/icons/previous.svg'
-                : type === 'upcoming'
-                  ? '/icons/upcoming.svg'
-                  : '/icons/recordings.svg'
+              type === 'ended' ? '/icons/previous.svg' : type === 'upcoming' ? '/icons/upcoming.svg' : '/icons/recordings.svg'
             }
             title={
               (meeting as Call).state?.custom?.description ||
